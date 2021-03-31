@@ -68,10 +68,12 @@ u, l = sort(unic_words)
 
 #Функция выводит результат (total)
 import random
-total = [1, 2, 3]
+total = [1, 2, 3] '''список связок'''
 
 empty_list = []
 for i in total:
     rand_index = random.randint(0, len(empty_list))
     empty_list.insert((rand_index), i)
 print(empty_list)
+
+#u big l small
