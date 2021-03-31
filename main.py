@@ -38,6 +38,11 @@ def associations(raw, uniq):
 
 
 def unic(a):
+    """
+    find unic words
+    :param a:
+    :return:
+    """
     u = []
     b = a.split()
     for i in b:
