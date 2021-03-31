@@ -1,5 +1,4 @@
-import re
-
+import re, random, string
 
 def start():
     with open(input('Введите имя файла')) as f_in:
@@ -59,18 +58,37 @@ def sort(b):
     print(z, w)
     return z, w
 
+
+def choose(words):
+    ind = random.randint(0, len(words)-1)
+    return words[ind]
+
+
+def algorythm(connections, upper, sentences, uniq_words):
+    text = ''
+    for first_layer in range(sentences):
+        word = choose(upper)
+        text += word + ' '
+        words = connections[uniq_words.index(word)]
+        for second_layer in range(19):
+            word = choose(words)
+            text += word + ' '
+            words = connections[uniq_words.index(word)]
+            if word[-1] in '.!?':
+                break
+        if text.rstrip()[-1] in string.punctuation:
+            if not text.rstrip()[-1] in '.!?':
+                text_copy = text[:-2]
+                text = text_copy + '. '
+        else:
+            text = text.rstrip() + '. '
+    print(text.rstrip())
+
+
 d=start()
 d=re.sub(r'\s+(?=(?:[,.?!:;…]))', r'', d)
 words,unic_words = unic(d)
 u, l = sort(unic_words)
 
 
-#Функция выводит результат (total)
-import random
-total = [1, 2, 3]
-
-empty_list = []
-for i in total:
-    rand_index = random.randint(0, len(empty_list))
-    empty_list.insert((rand_index), i)
-print(empty_list)
+algorythm(associations(words, unic_words), u, 10, unic_words)
