@@ -1,7 +1,7 @@
 import re, random, string
 
 def start():
-    with open(input('Введите имя файла')) as f_in:
+    with open(input('Введите имя файла ')) as f_in:
         d = ''
         for line in f_in:
             r = line.strip()
