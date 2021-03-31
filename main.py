@@ -53,6 +53,12 @@ def unic(a):
 
 
 def sort(b):
+    """
+    sorts the list
+    :param b:
+    :return:
+    """
+
     z = []
     w = []
     for i in b:
