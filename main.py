@@ -71,9 +71,17 @@ v = [9,8,7,6,5]
 unic_words =[4,5]
 
 empty_list = []
-for i in total:
-    rand_index = random.randint(0, len(empty_list))
-    empty_list.insert((rand_index), 0)
-print(empty_list)
+randomu = random.randint(0,len(u)-1)
+print(randomu)
+empty_list.append(u[randomu])
+randomv = random.randint(0,len(u)-1)
+print(randomv)
 
+print(empty_list)
 #u big l small
+
+
+
+
+
+
