@@ -3,6 +3,8 @@ import re, random, string
 
 def start() :
     """
+    Makes text simple to be ready by the program
+    :return: 'raw' text
 
     """
     with open(input('Введите имя файла: ')) as f_in:
@@ -14,6 +16,12 @@ def start() :
 
 
 def associations(raw, uniq):
+    """
+    Creates list of words associations
+    :param raw: all words from the text
+    :param uniq: list of uniq words
+    :return: list of words associations
+    """
     words = []
     for word in uniq:
         raw_copy = raw.copy()
@@ -28,6 +36,11 @@ def associations(raw, uniq):
 
 
 def unic(a):
+    """
+    creates list of uniq words
+    :param a: all words
+    :return: list of uniq words
+    """
     unic_list = []
     words = a.split()
     for i in words:
@@ -38,8 +51,12 @@ def unic(a):
 
 
 def sort(words):
+    """
+    creates list of starting words
+    :param words: all words
+    :return: list of starting words
+    """
     capital = []
-    small = []
     for i in words:
         if i[0].isupper():
             capital.append(i)
@@ -47,11 +64,24 @@ def sort(words):
 
 
 def choose(words):
+    """
+    chose random indexes
+    :param words: all words
+    :return: one random word
+    """
     ind = random.randint(0, len(words) - 1)
     return words[ind]
 
 
 def algorythm(connections, upper, sentences, uniq_words):
+    """
+    creates sentences
+    :param connections: list of associations
+    :param upper: list of capital words
+    :param sentences: quantity of sentences
+    :param uniq_words: list of uniq words
+    :return: None
+    """
     text = ''
     for first_layer in range(sentences):
         word = choose(upper)
