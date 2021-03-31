@@ -1,7 +1,7 @@
-'''import re
+import re,random
 
 
-def start():
+'''def start():
     with open(input('Введите имя файла')) as f_in:
         d = ''
         for line in f_in:
@@ -21,9 +21,8 @@ def whitespace(a):
             d.append(a[i])
     d = ' '.join(map(str, d))
     print(d)
-    return d'''
+    return d
 
-'''
 def associations(raw, uniq):
     words = []
     for word in uniq:
@@ -62,18 +61,19 @@ def sort(b):
 d=start()
 d=re.sub(r'\s+(?=(?:[,.?!:;…]))', r'', d)
 words,unic_words = unic(d)
-u, l = sort(unic_words)
-'''
+u, l = sort(unic_words)'''
+
 
 
 #Функция выводит результат (total)
-import random
-total = [1, 2, 3] '''список связок'''
+u = [1,2,3,4]
+v = [9,8,7,6,5]
+unic_words =[4,5]
 
 empty_list = []
 for i in total:
     rand_index = random.randint(0, len(empty_list))
-    empty_list.insert((rand_index), i)
+    empty_list.insert((rand_index), 0)
 print(empty_list)
 
 #u big l small
