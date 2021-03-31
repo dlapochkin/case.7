@@ -1,3 +1,4 @@
+'''
 with open('input.txt') as f_in:
     d=''
     for line in f_in:
@@ -18,7 +19,7 @@ for i in range(len(a)):
 d = ' '.join(map(str, d))
 print(d)
 
-
+#Функция выводит уникальные слова в список (u)
 u=[]
 b=d.split()
 for i in b:
@@ -32,4 +33,14 @@ for i in u:
         z.append(i)
     else:
         w.append(i)
-print(z,w)
+print(z,w)'''
+
+
+#Функция выводит результат (total)
+import random
+total = []
+
+empty_list = []
+for i in total:
+    rand_index = random.randint(0, len(empty_list))
+    empty_list.insert((rand_index), i)
