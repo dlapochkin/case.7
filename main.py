@@ -45,7 +45,7 @@ def unic(a):
         if i not in u:
             u.append(i)
     print(u)
-    return u
+    return b,u
 
 
 def sort(b):
@@ -61,5 +61,5 @@ def sort(b):
 
 d=start()
 d=re.sub(r'\s+(?=(?:[,.?!:;…]))', r'', d)
-unic_words = unic(d)
+words,unic_words = unic(d)
 u, l = sort(unic_words)
