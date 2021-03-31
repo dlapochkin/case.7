@@ -1,26 +1,13 @@
 import re, random, string
 
-def start():
-    with open(input('Введите имя файла ')) as f_in:
+
+def start() :
+    with open(input('Введите имя файла: ')) as f_in:
         d = ''
         for line in f_in:
             r = line.strip()
             d += r + ' '
         return d
-'''#Функция убирает пробелы до знаков препинания (a строка на вход - d а выход)
-def whitespace(a):
-    a= a.split()
-    d = []
-    print(a)
-    for i in range(len(a)):
-
-        if a[i] in '.,!-?':
-            d[i-1] = d[i-1] + a[i]
-        else:
-            d.append(a[i])
-    d = ' '.join(map(str, d))
-    print(d)
-    return d'''
 
 
 def associations(raw, uniq):
@@ -38,27 +25,16 @@ def associations(raw, uniq):
 
 
 def unic(a):
-    """
-    find unic words
-    :param a:
-    :return:
-    """
     u = []
     b = a.split()
     for i in b:
         if i not in u:
             u.append(i)
     print(u)
-    return b,u
+    return b, u
 
 
 def sort(b):
-    """
-    sorts the list
-    :param b:
-    :return:
-    """
-
     z = []
     w = []
     for i in b:
@@ -71,7 +47,7 @@ def sort(b):
 
 
 def choose(words):
-    ind = random.randint(0, len(words)-1)
+    ind = random.randint(0, len(words) - 1)
     return words[ind]
 
 
@@ -96,10 +72,10 @@ def algorythm(connections, upper, sentences, uniq_words):
     print(text.rstrip())
 
 
-d=start()
-d=re.sub(r'\s+(?=(?:[,.?!:;…]))', r'', d)
-words,unic_words = unic(d)
+d = start()
+n = int(input('Введите количетво предложений: '))
+d = re.sub(r'\s+(?=(?:[,.?!:;…]))', r'', d)
+words, unic_words = unic(d)
 u, l = sort(unic_words)
-
 
 algorythm(associations(words, unic_words), u, 10, unic_words)
