@@ -2,12 +2,15 @@ import re, random, string
 
 
 def start() :
+    """
+
+    """
     with open(input('Введите имя файла: ')) as f_in:
-        d = ''
+        file_text = ''
         for line in f_in:
             r = line.strip()
-            d += r + ' '
-        return d
+            file_text += r + ' '
+        return file_text
 
 
 def associations(raw, uniq):
@@ -25,25 +28,22 @@ def associations(raw, uniq):
 
 
 def unic(a):
-    u = []
-    b = a.split()
-    for i in b:
-        if i not in u:
-            u.append(i)
-    print(u)
-    return b, u
+    unic_list = []
+    words = a.split()
+    for i in words:
+        if i not in unic_list:
+            unic_list.append(i)
+    print(unic_list)
+    return words, unic_list
 
 
-def sort(b):
-    z = []
-    w = []
-    for i in b:
+def sort(words):
+    capital = []
+    small = []
+    for i in words:
         if i[0].isupper():
-            z.append(i)
-        else:
-            w.append(i)
-    print(z, w)
-    return z, w
+            capital.append(i)
+    return capital
 
 
 def choose(words):
@@ -75,7 +75,7 @@ def algorythm(connections, upper, sentences, uniq_words):
 d = start()
 n = int(input('Введите количетво предложений: '))
 d = re.sub(r'\s+(?=(?:[,.?!:;…]))', r'', d)
-words, unic_words = unic(d)
-u, l = sort(unic_words)
+word, unic_word = unic(d)
+u = sort(unic_word)
 
-algorythm(associations(words, unic_words), u, 10, unic_words)
+algorythm(associations(word, unic_word), u, 10, unic_word)
