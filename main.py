@@ -1,4 +1,6 @@
 import re
+
+
 def start():
     with open(input('Введите имя файла')) as f_in:
         d = ''
@@ -20,6 +22,20 @@ def whitespace(a):
     d = ' '.join(map(str, d))
     print(d)
     return d'''
+
+
+def associations(raw, uniq):
+    words = []
+    for word in uniq:
+        raw_copy = raw.copy()
+        that = []
+        for i in range(raw.count(word)):
+            ind = raw_copy.index(word)
+            raw_copy.remove(word)
+            if ind != len(raw_copy) and raw_copy[ind] not in that:
+                that.append(raw_copy[ind])
+        words.append(that)
+    return words
 
 
 def unic(a):
