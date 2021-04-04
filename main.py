@@ -52,7 +52,6 @@ def unic(a):
     for i in words:
         if i not in unic_list:
             unic_list.append(i)
-    print(unic_list)
     return words, unic_list
 
 
